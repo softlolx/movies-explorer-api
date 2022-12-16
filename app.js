@@ -6,8 +6,8 @@ const { errors } = require('celebrate');
 const helmet = require('helmet');
 const cors = require('./middlewares/cors');
 const routes = require('./routes');
-const limiter = require('./middlewares/reateLimiter');
-const errorsHandler = require('./middlewares/errorHandler');
+const limiter = require('./middlewares/limiter');
+const errorHandler = require('./middlewares/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000, MONGO_URL = 'mongodb://localhost:27017/moviesdb' } = process.env;
@@ -23,7 +23,7 @@ app.use(cors);
 app.use(routes);
 app.use(errors());
 app.use(errorLogger);
-app.use(errorsHandler);
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`app listening on port ${PORT}`);
