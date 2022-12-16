@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
 const BadRequestError = require('../utils/errors/badRequestError');
-const NotFoundError = require('../utils/errors/notFoundError');
 const UsedEmailError = require('../utils/errors/usedEmailError');
 const { getJWT } = require('../utils/utils');
 
@@ -37,10 +36,6 @@ module.exports.login = (req, res, next) => {
         next(err);
       }
     });
-};
-
-module.exports.logout = (_, res) => {
-  res.clearCookie('token').send({ message: 'Вы вышли разлогинились' });
 };
 
 module.exports.getMyProfile = (req, res, next) => {
