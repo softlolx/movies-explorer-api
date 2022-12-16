@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://mesto-softlolx.nomoredomains.club',
-  'http://mesto-softlolx.nomoredomains.club',
+  'https://movies-softlolx.nomoredomains.club',
+  'http://movies-softlolx.nomoredomains.club',
   'https://localhost:3000',
   'http://localhost:3000',
 ];
