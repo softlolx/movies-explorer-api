@@ -30,7 +30,7 @@ module.exports.addFovoriteMovie = (req, res, next) => {
 };
 
 module.exports.deleteFavoriteMovie = (req, res, next) => {
-  Movie.findById(req.params.id)
+  Movie.findById(req.params.movieId)
     .then((movie) => {
       if (!movie) {
         throw new NotFoundError('К несчастью фильма с таким айди мы не нашли');

@@ -1,5 +1,5 @@
 const { mongoose } = require('mongoose');
-const validator = require('validate');
+const validator = require('validator');
 
 const urlValidator = {
   validator: (data) =>
@@ -28,7 +28,7 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  desciption: {
+  description: {
     type: String,
     required: true,
   },
